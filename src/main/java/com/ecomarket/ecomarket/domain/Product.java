@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Entity
@@ -17,7 +18,7 @@ public class Product {
     @Column
     private double price;
     @JsonProperty(access= JsonProperty.Access.WRITE_ONLY)
-    @Column
+    @ManyToOne
     private Seller seller;
     @Column
     private String description;

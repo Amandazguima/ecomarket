@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 
 @Entity
@@ -15,6 +16,6 @@ public class Cart {
     @Column
     private double total;
     @JsonProperty(access= JsonProperty.Access.WRITE_ONLY)
-    @Column
+    @OneToOne
     private Customer customer;
 }
